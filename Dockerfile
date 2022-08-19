@@ -2,7 +2,7 @@ FROM node:14-alpine3.11 as builder
 WORKDIR '/app'
 COPY package.json .
 RUN npm config set strict-ssl false
-RUN npm install
+RUN npm install --silent
 COPY . .
 RUN npm run build
 
